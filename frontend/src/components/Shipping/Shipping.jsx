@@ -25,7 +25,7 @@ export default function Shipping() {
 
           <h2 className="text-xl font-semibold mb-4 text-gray-800 animate-fade-in-up">ETA: ESTIMATED TIME OF ARRIVAL:</h2>
           <p className="text-gray-700 mb-4 transition-all duration-300 hover:text-gray-900">
-            Estimated delivery time for all orders is between 4 to 5 working days from the date of order placement.
+            Estimated delivery time for all orders is between 3 to 7 working days from the date of order placement.
           </p>
 
           <h2 className="text-xl font-semibold mb-4 text-gray-800 animate-fade-in-up">
@@ -37,10 +37,9 @@ export default function Shipping() {
 
           <ul className="list-disc list-inside text-gray-700 mb-4 transition-all duration-300 hover:text-gray-900">
             <li>All prepaid orders come with free shipping.</li>
-            <li>Cash on delivery (COD) orders above ₹500 receive free shipping.</li>
-            <li>COD orders below ₹500 will incur a shipping fee of ₹70.</li>
-            <li>Delivery typically takes 3 to 4 working days for domestic orders, depending on location.</li>
+            
             <li>Orders are processed and shipped on the next business day.</li>
+            <li>There will be additional shipping charges depending on delievery location</li>
             <li>We ship using reliable and trusted courier services to ensure timely delivery.</li>
             <li>Once an order has been shipped, we no longer have control over the delivery process, but you can reach out to us for any inquiries.</li>
             <li>All orders come with tracking numbers so you can monitor your shipment's progress.</li>

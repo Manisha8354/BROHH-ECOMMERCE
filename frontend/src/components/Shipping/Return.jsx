@@ -33,14 +33,14 @@ export default function Return() {
             a. Eligibility for Returns
           </h3>
           <p className="text-gray-700 mb-4 transition-all duration-300 hover:text-gray-900">
-            Products can be returned within 14 days from the date of delivery. Items must be in their original packaging, unused, and in the same condition as when you received them. Non-returnable items include products damaged due to misuse, improper handling, or wear and tear, personalized or custom-made items, and products from clearance or sale (unless defective).
+            Products can be returned within 7 days from the date of delivery. Items must be in their original packaging, unused, and in the same condition as when you received them. Non-returnable items include products damaged due to misuse, improper handling, or wear and tear, personalized or custom-made items, and products from clearance or sale (unless defective).
           </p>
 
           <h3 className="text-xl font-semibold mb-2 text-gray-900 animate-fade-in-up">
             b. Return Process
           </h3>
           <p className="text-gray-700 mb-4 transition-all duration-300 hover:text-gray-900">
-            To initiate a return, please contact our customer service team at +91 9621517568 or email brohhclothing@gmail.com with your order details and reason for return. Once approved, we will send instructions on how to ship the item back to us. Customers are responsible for return shipping costs unless the item was received damaged or defective. After we receive and inspect the returned product, a refund to the original payment method will be issued within 5-10 business days.
+            To initiate a return, please contact our customer service team at +91 9851615555 or email info@brohh.com with your order details and reason for return. Once approved, we will send instructions on how to ship the item back to us. Customers are responsible for return shipping costs unless the item was received damaged or defective. After we receive and inspect the returned product, a refund to the original payment method will be issued within 5-10 business days.
           </p>
 
           <h3 className="text-xl font-semibold mb-2 text-gray-900 animate-fade-in-up">
@@ -57,7 +57,7 @@ export default function Return() {
             a. Order Cancellation
           </h3>
           <p className="text-gray-700 mb-4 transition-all duration-300 hover:text-gray-900">
-            You can cancel your order before it has been shipped. To cancel your order, please contact us immediately at +91 9621517568 or email brohhclothing@gmail.com. Once the order has been shipped, it cannot be canceled, and the return policy will apply.
+            You can cancel your order before it has been shipped. To cancel your order, please contact us immediately at +91 9851615555 or email info@brohh.com Once the order has been shipped, it cannot be canceled, and the return policy will apply.
           </p>
 
           <h3 className="text-xl font-semibold mb-2 text-gray-900 animate-fade-in-up">
