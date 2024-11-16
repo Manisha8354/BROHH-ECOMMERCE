@@ -80,58 +80,68 @@ export default function Banner() {
   };
 
   return (
-    <div className="relative ">
-    <div className="min-h-[550px] flex flex-col justify-center items-center py-12 sm:py-0">
-      {/* Blogs Heading */}
-      <h1 className="text-4xl font-bold mb-8">Blogs</h1>
+    <div className="relative">
+      <div className="min-h-[550px] flex flex-col justify-center items-center py-12 sm:py-0">
+        {/* Blogs Heading */}
+        <h1 data-aos="fade-up" className="text-4xl font-bold mb-8 text-center">
+          Blogs
+        </h1>
 
-      <div className="w-full md:w-3/5 mb-8 md:mb-0 overflow-hidden py-3 mt-12">
-        {/* Sliding cards */}
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * (100 / visibleCards)}%)` }}
-        >
-          {cards.map((card, index) => (
-            <div
-              key={card.id}
-              className={`relative w-full h-[450px] lg:h-[500px] rounded-lg shadow-lg overflow-hidden flex-shrink-0 transform hover:scale-105 transition-transform duration-300 ease-in-out ${index !== cards.length - 1 ? 'mr-4' : ''}`}
-              style={{ flex: `0 0 ${100 / visibleCards}%` }}
-              onMouseEnter={() => setHoveredCard(card.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              {/* Link wraps the whole card */}
-              <Link to="/blogmore" className="block w-full h-full">
-                <img src={card.image} alt={`Card ${card.id}`} className="w-full h-full object-cover" />
+        <div className="w-full md:w-3/4 lg:w-3/5 mb-8 overflow-hidden py-3">
+          {/* Sliding cards */}
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * (100 / visibleCards)}%)` }}
+          >
+            {cards.map((card, index) => (
+              <div
+                key={card.id}
+                className={`relative w-full h-[430px] lg:h-[480px] rounded-lg shadow-lg overflow-hidden flex-shrink-0 transform hover:scale-105 transition-transform duration-300 ease-in-out ${
+                  index !== cards.length - 1 ? "mr-4" : ""
+                }`}
+                style={{ flex: `0 0 ${100 / visibleCards}%` }}
+                onMouseEnter={() => setHoveredCard(card.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                {/* Link wraps the whole card */}
+                <Link to="/blogmore" className="block w-full h-full">
+                  <img
+                    src={card.image}
+                    alt={`Card ${card.id}`}
+                    className="w-full h-full object-cover"
+                  />
 
-                {/* Overlay content */}
-                <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white p-4 text-center z-10 fade-in">
-                  <h2 className="text-2xl font-semibold">{card.content.title}</h2>
-                  <p className="mt-2 text-sm">{card.content.description}</p>
-                </div>
-
-                {/* Data shown when hovered */}
-                {hoveredCard === card.id && (
-                  <div className="absolute inset-0 bg-black/60 flex items-end justify-center text-white p-4 text-center z-10 fade-in">
-                    {card.data}
+                  {/* Overlay content */}
+                  <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white p-4 text-center z-10 fade-in">
+                    <h2 className="text-2xl font-semibold">{card.content.title}</h2>
+                    <p className="mt-2 text-sm">{card.content.description}</p>
                   </div>
-                )}
-              </Link>
-            </div>
-          ))}
-        </div>
 
-        {/* Dots for Navigation */}
-        <div className="flex justify-center mt-4 space-x-2">
-          {Array.from({ length: Math.max(cards.length - visibleCards + 1, 1) }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              className={`h-3 w-3 rounded-full transition-colors duration-300 ease-in-out ${currentIndex === index ? 'bg-white' : 'bg-gray-400'}`}
-            />
-          ))}
+                  {/* Data shown when hovered */}
+                  {hoveredCard === card.id && (
+                    <div className="absolute inset-0 bg-black/60 flex items-end justify-center text-white p-4 text-center z-10 fade-in">
+                      {card.data}
+                    </div>
+                  )}
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {/* Dots for Navigation */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {Array.from({ length: Math.max(cards.length - visibleCards + 1, 1) }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleDotClick(index)}
+                className={`h-3 w-3 rounded-full transition-colors duration-300 ease-in-out ${
+                  currentIndex === index ? "bg-white" : "bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

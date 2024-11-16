@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Img1 from "../../assets/shirt/myfot2.jfif";
 import Img2 from "../../assets/shirt/myfoto.jfif";
 import Img3 from "../../assets/shirt/myfoto2.jfif";
-import { FaStar } from "react-icons/fa";
 import axios from "axios";
 
 const ProductsData = [
@@ -34,15 +33,17 @@ export default function TopProducts({ handleOrderPopup }) {
 
   // Fetching subcategory data
   async function getsubCategory() {
-    let result = await axios.get('https://actl.co.in/pritam/subcategoryget');
-    let final = result.data.filter((data)=> data.subcategoryName == "regular")
+    let result = await axios.get("https://actl.co.in/pritam/subcategoryget");
+    let final = result.data.filter(
+      (data) => data.subcategoryName === "regular"
+    );
     setsubCategory(final);
   }
 
   useEffect(() => {
     getsubCategory();
   }, []);
-// console.log(subcategory)
+
   return (
     <div className="h-fit">
       <div className="container mx-auto h-fit flex flex-col justify-start items-center pt-5">
@@ -57,44 +58,30 @@ export default function TopProducts({ handleOrderPopup }) {
         </div>
 
         {/* Body section with grid layout */}
-        <div className="flex flex-wrap gap-28 mt-24 justify-center"> {/* Added mt-10 to shift the cards down */}
+        <div className="flex flex-wrap gap-10 justify-center">
           {subcategory.map((data, index) => (
             <div
-              
-              className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group w-[300px]"
+              className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary hover:text-white relative shadow-2xl group w-full sm:w-[320px] md:w-[280px] lg:w-[320px] xl:w-[320px] h-[320px] flex justify-center items-center hover:shadow-3xl transition-shadow duration-300"
               key={data.id}
             >
-              {/* image section */}
-              <div className="h-[150px] flex justify-center">
+              {/* Image section */}
+              <div
+                className="w-full h-full cursor-pointer"
+                onClick={() => (window.location.href = `/view/${data.categoryName}`)}
+              >
                 <img
                   src={`https://actl.co.in/pritam_uploads/${data.subcategoryImage}`}
                   alt="product"
-                  className={`block mx-auto transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md rounded-md w-[120px] h-[150px]`}
+                  className="w-full h-full object-cover rounded-2xl transform scale-105 group-hover:scale-110 duration-300"
                 />
               </div>
 
-              {/* details section */}
-              <div className="p-4 text-center flex flex-col gap-1">
-                {/* star rating */}
-                <div className="w-full flex items-center justify-center gap-2">
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                </div>
-                <h1 className="text-xl font-bold">{data.categoryName}</h1>
-                <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">
+              {/* Details section */}
+              <div className="absolute -top-4 -left-5 p-4 text-left">
+                <h1 className="text-3xl font-bold">{data.categoryName}</h1>
+                <p className="text-gray-500 duration-300 text-sm line-clamp-2">
                   {data.description}
                 </p>
-
-              
-                <a
-                  href={`/view/${data.categoryName}`}
-                  className="bg-gray-500 hover:scale-105 duration-300 text-white py-1 px-4 rounded-full group-hover:bg-white group-hover:text-black"
-                  onClick={handleOrderPopup}
-                >
-                  Order Now
-                </a>
               </div>
             </div>
           ))}
